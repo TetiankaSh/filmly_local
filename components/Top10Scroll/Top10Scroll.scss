@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px 5%; // Aligns with your Header padding
+  scroll-snap-type: x mandatory; // Makes scrolling feel "snappy"
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+}
+
+.movie {
+  flex: 0 0 200px; // Keeps cards a fixed width
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 2 / 3; // Standard movie poster ratio
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; // Cuts off long titles with "..."
+    color: white;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: white;
+    margin-top: 4px;
+
+    &__rating {
+      color: #f1c40f; // Gold color for stars
+      font-weight: bold;
+    }
+  }
+}

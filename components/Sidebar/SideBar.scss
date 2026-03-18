@@ -1,0 +1,57 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 50px; // Starts below your fixed header
+  height: calc(100vh - 50px);
+  width: 70px; // Default "closed" width
+  background-color: #050a1e; // Matching your login dark theme
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 900;
+  border-right: 1px solid #1e2746;
+
+  &:hover {
+    width: 240px; // Expanded width
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 15px 23px; // Padding keeps icons centered when closed
+    text-decoration: none;
+    color: #a0a0a0;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap; // Prevents text from wrapping to a new line
+
+    &:hover {
+      background-color: #1e2746;
+      color: #81c784; // Using your Filmly green
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    min-width: 24px; // Ensures the icon doesn't move during expansion
+    text-align: center;
+  }
+
+  &__text {
+    margin-left: 20px;
+    font-weight: 500;
+    opacity: 0; // Hidden by default
+    transition: opacity 0.2s ease;
+  }
+
+  // When the sidebar is hovered, show the text
+  &:hover &__text {
+    opacity: 1;
+  }
+}

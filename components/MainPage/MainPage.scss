@@ -1,0 +1,95 @@
+.main-page {
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  padding-bottom: 100px; // Space at the bottom for scrolling
+
+  &__search-container {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #141414, #000);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #222;
+  }
+
+  &__search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 55px;
+    background: #1a1a1a;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+
+    &:focus-within {
+      border-color: #e50914;
+      background: #222;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.2);
+    }
+
+    &__input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0 25px;
+      color: white;
+      font-size: 1.1rem;
+
+      &::placeholder {
+        color: #666;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__button {
+      background: transparent;
+      border: none;
+      padding: 0 25px;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #888;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #e50914;
+      }
+    }
+  }
+
+  // Consistent Content Wrapper
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px; // Matches the padding on ItemPage and Catalog
+  }
+
+  .main-section {
+    margin-top: 60px;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #fff;
+      // Using the same red-accent style from Catalog/Profile
+      border-left: 4px solid #e50914;
+      padding-left: 15px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// Mobile responsiveness for consistency
+@media (max-width: 768px) {
+  .main-page__content {
+    padding: 0 20px;
+  }
+
+  .main-page__search-bar {
+    max-width: 90%;
+  }
+}
